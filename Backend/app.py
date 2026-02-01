@@ -25,10 +25,10 @@ PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
 GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 
 if not PINECONE_API_KEY:
-    raise ValueError("❌ PINECONE_API_KEY not found in .env")
+    raise ValueError("PINECONE_API_KEY not found in .env")
 
 if not GOOGLE_API_KEY:
-    raise ValueError("❌ GOOGLE_API_KEY not found in .env")
+    raise ValueError("GOOGLE_API_KEY not found in .env")
 
 os.environ["PINECONE_API_KEY"] = PINECONE_API_KEY
 os.environ["GOOGLE_API_KEY"] = GOOGLE_API_KEY
@@ -91,7 +91,7 @@ def chat():
         return jsonify({"answer": answer})
 
     except Exception as e:
-        print("❌ Error:", str(e))
+        print("Error:", str(e))
         return jsonify({"error": "Internal server error"}), 500
 
 
